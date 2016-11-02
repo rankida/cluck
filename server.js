@@ -34,14 +34,11 @@ server.register(require('inert'), (err) => {
 
 server.route({
   method: 'GET',
-  path: '/hello',
-  handler: (request, reply) => reply('Hello from Rankida')
-});
-
-server.route({
-  method: 'GET',
-  path: '/hello/{name}',
-  handler: (request, reply) => reply('Hello ' + encodeURIComponent(request.params.name))
+  path: '/hello/{name?}',
+  handler: (request, reply) => {
+    const name = encodeURIComponent(request.params.name || 'mystery person');
+    reply('Hello ' + name);
+  }
 });
 
 server.register({
@@ -61,7 +58,6 @@ server.register({
     }
   }
 }, (err) => {
-
   if (err) {
     throw err;
   }
