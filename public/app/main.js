@@ -11,12 +11,14 @@ class CluckApp extends React.Component {
   render () {
     return (
       <div>
+        <input ref={(el) => (this.input = el)} />
         <button onClick={() => {
           store.dispatch({
             type: 'ADD_CLUCK',
             id: id++,
-            message: 'Cluck cluck!'
+            message: this.input.value
           });
+          this.input.value = '';
         }}>
           Cluck
         </button>

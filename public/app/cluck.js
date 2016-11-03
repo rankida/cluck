@@ -1,6 +1,6 @@
 const cluck = (state, action) => {
   switch (action && action.type) {
-    case 'ADD_CLUCK' :
+    case 'ADD_CLUCK':
       return {id: action.id, message: action.message};
     case 'LIKE_CLUCK':
       return Object.assign({}, state, {likes: state.likes + 1});
@@ -37,4 +37,4 @@ const app = (state = {}, action) => {
   };
 };
 
-exports = { clucks, app };
+exports = { clucks, app};
