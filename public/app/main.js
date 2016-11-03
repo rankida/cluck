@@ -8,17 +8,28 @@ const store = createStore(app);
 let id = 0;
 
 class CluckApp extends React.Component {
+  constructor (props) {
+    super(props);
+    this.handelChange = this.handelChange.bind(this);
+    this.state = { message: '' };
+  }
+
+  handelChange (e) {
+    this.setState({message: e.target.value});
+  }
+
   render () {
+    const message = this.state.message;
     return (
       <div>
-        <input ref={(el) => (this.input = el)} />
+        <input value={message} onChange={this.handelChange} />
         <button onClick={() => {
           store.dispatch({
             type: 'ADD_CLUCK',
             id: id++,
-            message: this.input.value
+            message: message
           });
-          this.input.value = '';
+          this.state.message = '';
         }}>
           Cluck
         </button>
