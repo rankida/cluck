@@ -20,6 +20,22 @@ const clucks = (state = [], action) => {
   }
 };
 
+const view = (state = 'ALL', action) => {
+  switch (action && action.type) {
+    case 'CHANGE_VIEW':
+      return action.view;
+    default:
+      return state;
+  }
+};
+
+const app = (state = {}, action) => {
+  return {
+    clucks: clucks(state.clucks, action),
+    view: view(state.view, action)
+  };
+};
+
 if (module) {
-  module.exports = { clucks };
+  module.exports = { clucks, app };
 }
