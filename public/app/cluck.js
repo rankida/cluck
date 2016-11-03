@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 const cluck = (state, action) => {
   switch (action && action.type) {
     case 'ADD_CLUCK':
@@ -9,7 +11,7 @@ const cluck = (state, action) => {
   }
 };
 
-const clucks = (state = [], action) => {
+export const clucks = (state = [], action) => {
   switch (action && action.type) {
     case 'ADD_CLUCK':
       return [...state, cluck(undefined, action)];
@@ -29,12 +31,9 @@ const view = (state = 'ALL', action) => {
   }
 };
 
-// TODO: Need to import Redux and use combine reducers
-const app = (state = {}, action) => {
-  return {
-    clucks: clucks(state.clucks, action),
-    view: view(state.view, action)
-  };
-};
+export const app = combineReducers({
+  clucks,
+  view
+});
 
-exports = { clucks, app};
+export default { clucks, app };
