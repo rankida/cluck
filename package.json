@@ -14,6 +14,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "deep-freeze": "0.0.1",
+    "jspm": "^0.16.47",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.6"
@@ -24,5 +25,21 @@
     "good-squeeze": "^5.0.0",
     "hapi": "^15.2.0",
     "inert": "^4.0.2"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "jsx": "github:floatdrop/plugin-jsx@^1.2.1",
+      "react": "npm:react@^15.3.2",
+      "react-dom": "npm:react-dom@^15.3.2",
+      "redux": "npm:redux@^3.6.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }

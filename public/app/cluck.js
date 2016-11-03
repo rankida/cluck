@@ -29,6 +29,7 @@ const view = (state = 'ALL', action) => {
   }
 };
 
+// TODO: Need to import Redux and use combine reducers
 const app = (state = {}, action) => {
   return {
     clucks: clucks(state.clucks, action),
@@ -36,6 +37,4 @@ const app = (state = {}, action) => {
   };
 };
 
-if (module) {
-  module.exports = { clucks, app };
-}
+exports = { clucks, app };
