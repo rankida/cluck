@@ -5,8 +5,10 @@
   "main": "server.js",
   "repository": "rankida/cluck",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "mocha -w"
+    "test": "mocha -w",
+    "watch:server": "nodemon --ignore public/ server.js",
+    "watch:client": "livereload ./public",
+    "watch": "npm run watch:server & npm run watch:client"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "chai": "^3.5.0",
     "deep-freeze": "0.0.1",
     "jspm": "^0.16.47",
+    "livereload": "^0.6.0",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.6"
