@@ -5,7 +5,7 @@
   "main": "server.js",
   "repository": "rankida/cluck",
   "scripts": {
-    "dev" : "nodemon server.js",
+    "dev": "nodemon server.js",
     "test": "mocha -w"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
+    "deep-freeze": "0.0.1",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.6"
