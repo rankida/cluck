@@ -18,8 +18,10 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
     "jsx": "github:floatdrop/plugin-jsx@1.2.1",
+    "material-ui": "npm:material-ui@0.16.1",
     "react": "npm:react@15.3.2",
     "react-dom": "npm:react-dom@15.3.2",
+    "react-tap-event-plugin": "npm:react-tap-event-plugin@1.0.0",
     "redux": "npm:redux@3.6.0",
     "github:floatdrop/plugin-jsx@1.2.1": {
       "react-tools": "npm:react-tools@0.13.3"
@@ -108,6 +110,10 @@ System.config({
     },
     "npm:babel-runtime@5.8.38": {
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:babel-runtime@6.18.0": {
+      "core-js": "npm:core-js@2.4.1",
+      "regenerator-runtime": "npm:regenerator-runtime@0.9.5"
     },
     "npm:bn.js@4.11.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
@@ -226,6 +232,12 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
+    "npm:core-js@2.4.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
@@ -309,6 +321,12 @@ System.config({
       "create-hash": "npm:create-hash@1.1.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0"
     },
+    "npm:fbjs@0.2.1": {
+      "core-js": "npm:core-js@1.2.7",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "promise": "npm:promise@7.1.1",
+      "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
+    },
     "npm:fbjs@0.8.5": {
       "core-js": "npm:core-js@1.2.7",
       "immutable": "npm:immutable@3.8.1",
@@ -364,9 +382,13 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:inline-style-prefixer@2.0.4": {
+      "bowser": "npm:bowser@1.5.0",
+      "hyphenate-style-name": "npm:hyphenate-style-name@1.0.2"
+    },
     "npm:isomorphic-fetch@2.2.1": {
       "node-fetch": "npm:node-fetch@1.6.3",
-      "whatwg-fetch": "npm:whatwg-fetch@1.0.0"
+      "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
     },
     "npm:jstransform@10.1.0": {
       "base62": "npm:base62@0.1.1",
@@ -376,12 +398,36 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "source-map": "npm:source-map@0.1.31"
     },
+    "npm:lodash.merge@4.6.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:lodash.throttle@4.1.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:loose-envify@1.3.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "js-tokens": "npm:js-tokens@2.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:material-ui@0.16.1": {
+      "babel-runtime": "npm:babel-runtime@6.18.0",
+      "inline-style-prefixer": "npm:inline-style-prefixer@2.0.4",
+      "keycode": "npm:keycode@2.1.7",
+      "lodash.merge": "npm:lodash.merge@4.6.0",
+      "lodash.throttle": "npm:lodash.throttle@4.1.1",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.3.2",
+      "react-addons-create-fragment": "npm:react-addons-create-fragment@15.3.2",
+      "react-addons-transition-group": "npm:react-addons-transition-group@15.3.2",
+      "react-dom": "npm:react-dom@15.3.2",
+      "react-event-listener": "npm:react-event-listener@0.4.0",
+      "react-tap-event-plugin": "npm:react-tap-event-plugin@1.0.0",
+      "recompose": "npm:recompose@0.20.2",
+      "simple-assign": "npm:simple-assign@0.1.0",
+      "warning": "npm:warning@3.0.0"
     },
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.11.6",
@@ -471,7 +517,26 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:react-addons-create-fragment@15.3.2": {
+      "react": "npm:react@15.3.2"
+    },
+    "npm:react-addons-shallow-compare@15.3.2": {
+      "react": "npm:react@15.3.2"
+    },
+    "npm:react-addons-transition-group@15.3.2": {
+      "react": "npm:react@15.3.2"
+    },
     "npm:react-dom@15.3.2": {
+      "react": "npm:react@15.3.2"
+    },
+    "npm:react-event-listener@0.4.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react-addons-shallow-compare": "npm:react-addons-shallow-compare@15.3.2",
+      "warning": "npm:warning@3.0.0"
+    },
+    "npm:react-tap-event-plugin@1.0.0": {
+      "fbjs": "npm:fbjs@0.2.1",
+      "process": "github:jspm/nodelibs-process@0.1.2",
       "react": "npm:react@15.3.2"
     },
     "npm:react-tools@0.13.3": {
@@ -517,12 +582,24 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "source-map": "npm:source-map@0.5.6"
     },
+    "npm:recompose@0.20.2": {
+      "change-emitter": "npm:change-emitter@0.1.2",
+      "fbjs": "npm:fbjs@0.8.5",
+      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.3.2",
+      "symbol-observable": "npm:symbol-observable@0.2.4"
+    },
     "npm:redux@3.6.0": {
       "lodash": "npm:lodash@4.16.6",
       "lodash-es": "npm:lodash-es@4.16.6",
       "loose-envify": "npm:loose-envify@1.3.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "symbol-observable": "npm:symbol-observable@1.0.4"
+    },
+    "npm:regenerator-runtime@0.9.5": {
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -569,6 +646,10 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
+    },
+    "npm:warning@3.0.0": {
+      "loose-envify": "npm:loose-envify@1.3.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
 });

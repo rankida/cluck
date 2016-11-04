@@ -1,10 +1,12 @@
 import React from 'react';
+import CluckCard from 'app/components/cluck-card';
 
 export default function CluckList (props) {
   return (
-    <ul>
-    {props.clucks.map((c) =>
-      <li key={c.id}> {c.message}</li>
-    )}
-    </ul>);
+    <div className='cluck-list'>
+      {props.clucks.map((c) =>
+        <CluckCard key={c.id} cluck={c} />
+      )}
+    </div>
+  );
 }

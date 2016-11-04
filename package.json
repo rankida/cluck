@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha -w",
     "watch:server": "nodemon --ignore public/ server.js",
-    "watch:client": "livereload ./public",
+    "watch:client": "livereload ./public/app",
     "watch": "npm run watch:server & npm run watch:client",
     "build": "./bin/build.sh"
   },
@@ -37,8 +37,10 @@
     },
     "dependencies": {
       "jsx": "github:floatdrop/plugin-jsx@^1.2.1",
+      "material-ui": "npm:material-ui@^0.16.1",
       "react": "npm:react@^15.3.2",
       "react-dom": "npm:react-dom@^15.3.2",
+      "react-tap-event-plugin": "npm:react-tap-event-plugin@^1.0.0",
       "redux": "npm:redux@^3.6.0"
     },
     "devDependencies": {

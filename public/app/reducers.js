@@ -5,7 +5,7 @@ const cluck = (state, action) => {
     case 'ADD_CLUCK':
       return {id: action.id, message: action.message};
     case 'LIKE_CLUCK':
-      return Object.assign({}, state, {likes: state.likes + 1});
+      return Object.assign({}, state, {likes: (state.likes || 0) + 1});
     default:
       return state;
   }
