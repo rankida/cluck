@@ -18,6 +18,10 @@
     "chai": "^3.5.0",
     "deep-freeze": "0.0.1",
     "jspm": "^0.16.47",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jspm": "^2.2.0",
+    "karma-mocha": "^1.2.0",
     "livereload": "^0.6.0",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
@@ -36,6 +40,8 @@
       "baseURL": "public"
     },
     "dependencies": {
+      "chai": "npm:chai@^3.5.0",
+      "deep-freeze": "npm:deep-freeze@^0.0.1",
       "jsx": "github:floatdrop/plugin-jsx@^1.2.1",
       "react": "npm:react@^15.3.2",
       "react-dom": "npm:react-dom@^15.3.2",

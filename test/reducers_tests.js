@@ -1,7 +1,7 @@
 /* eslint-env mocha */
-const assert = require('chai').assert;
-const {app, clucks} = require('../public/cluck.js');
-const deepFreeze = require('deep-freeze');
+import { assert } from 'chai';
+import {app, clucks} from '../public/cluck.js';
+import deepFreeze from 'deep-freeze';
 
 describe('Cluck', function () {
   it('Initially there are no clucks', () => {
