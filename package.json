@@ -8,7 +8,8 @@
     "test": "mocha -w",
     "watch:server": "nodemon --ignore public/ server.js",
     "watch:client": "livereload ./public",
-    "watch": "npm run watch:server & npm run watch:client"
+    "watch": "npm run watch:server & npm run watch:client",
+    "build": "./bin/build.sh"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,8 @@
     "livereload": "^0.6.0",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "good": "^7.0.2",
