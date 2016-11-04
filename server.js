@@ -2,44 +2,15 @@
 
 const Hapi = require('hapi');
 const Good = require('good');
+const staticRoutes = require('./server/static-routes.js');
+const apiRoutes = require('./server/api.js');
 
 const server = new Hapi.Server();
 
 server.connection({ port: 3000 });
 
-server.register(require('inert'), (err) => {
-  if (err) {
-    throw err;
-  }
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, reply) => {
-      reply.file('./public/index.html');
-    }
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/public/{param*}',
-    handler: {
-      directory: {
-        path: 'public',
-        listing: true
-      }
-    }
-  });
-});
-
-server.route({
-  method: 'GET',
-  path: '/hello/{name?}',
-  handler: (request, reply) => {
-    const name = encodeURIComponent(request.params.name || 'mystery person');
-    reply('Hello ' + name);
-  }
-});
+staticRoutes.register(server);
+apiRoutes.register(server);
 
 server.register({
   register: Good,
