@@ -35,6 +35,20 @@ describe('UserStore', () => {
         done();
       }).catch(done);
     });
+    it('can initialise with users', (done) => {
+      const store = new UserStore({
+        bcrypt: { cost: 1 },
+        users: [
+          {id: 1, username: 'rankida', password: 'pwd', name: 'David Rankin'},
+          {id: 2, username: 'user2', password: 'pwd', name: 'User 22'},
+          {id: 3, username: 'user3', password: 'pwd', name: 'User 33'}
+        ]
+      });
+      store.usersAdded.then(() => {
+        assert.equal(3, store.count);
+        done();
+      }).catch(done);
+    });
   });
 
   it('can add a user', (done) => {

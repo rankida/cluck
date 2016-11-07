@@ -3,8 +3,11 @@ const Promise = require('bluebird');
 class UserStore {
   constructor (opts) {
     const options = opts || {};
-    this.store = options.users || [];
-    this.bcryptCost = opts.bcrypt && opts.bcrypt.cost || 10;
+    this.bcryptCost = options.bcrypt && options.bcrypt.cost || 10;
+    this.store = [];
+    if (options.users && options.users.length) {
+      this.usersAdded = Promise.all(options.users.map(this.add.bind(this)));
+    }
   }
   get count () {
     return this.store.length;
@@ -33,7 +36,7 @@ class UserStore {
     return this.get(username)
       .then((user) => new Promise((resolve, reject) => {
         bcrypt.compare(password, user.hash, (err, res) => {
-          err ? reject(err) : resolve(res);
+          err ? reject(err) : resolve(res ? user : null);
         });
       }));
   }
