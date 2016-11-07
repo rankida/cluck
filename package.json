@@ -6,6 +6,7 @@
   "repository": "rankida/cluck",
   "scripts": {
     "test": "mocha -w",
+    "debug": "node --inspect --debug-brk server.js",
     "watch:server": "nodemon --inspect --ignore public/ server.js",
     "watch:client": "livereload ./public/app",
     "watch": "npm run watch:server & npm run watch:client",

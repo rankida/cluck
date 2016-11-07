@@ -1,7 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
-const Good = require('good');
+const goodConfig = require('./server/good-config.js');
 const staticRoutes = require('./server/static-routes.js');
 const apiRoutes = require('./server/api.js');
 
@@ -12,23 +12,7 @@ server.connection({ port: 3000 });
 staticRoutes.register(server);
 apiRoutes.register(server);
 
-server.register({
-  register: Good,
-  options: {
-    reporters: {
-      console: [{
-        module: 'good-squeeze',
-        name: 'Squeeze',
-        args: [{
-          response: '*',
-          log: '*'
-        }]
-      }, {
-        module: 'good-console'
-      }, 'stdout']
-    }
-  }
-}, (err) => {
+server.register(goodConfig, (err) => {
   if (err) {
     throw err;
   }
